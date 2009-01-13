@@ -1,0 +1,6 @@
+#!/bin/bash
+
+nasm -f elf -o loader.o loader.nasm.s
+gcc -c kernel.c -o kernel.o
+ld -T linker.ld -o kernel.bin loader.o kernel.o
+
