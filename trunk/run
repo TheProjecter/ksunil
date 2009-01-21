@@ -1,1 +1,0 @@
-qemu -fda floppy.img -no-kqemu
