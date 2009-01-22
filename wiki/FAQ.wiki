@@ -1,0 +1,25 @@
+#summary (Somewhat) Frequently Asked Questions about Ksunil
+#labels Featured,Phase-Design
+
+= Introduction =
+
+Here are some (somewhat) frequently asked question about Ksunil. Hopefully they will answer some of your frequent questions.
+
+
+= F.A.Q. =
+
+== General ==
+==== What _is_ Ksunil, anyways? ====
+Ksunil is an open source, lightweight Kernel. It is designed with simplicity, efficiency and speed in mind. We try to keep it as minimalistic as possible, while at the same time giving the user the power that he/she needs. Everything can (and should) be easily configured to the user's liking. _Everything_.
+
+==== So this is free, right? ====
+Yup! Everything (including the source code, of course) is offered completely free (both as in free beer and freedom of speech), because we believe completely in the Open Source and Free Software philosophies. 
+
+==== What license does Ksunil use? ====
+Ksunil is under the GPLv3 license. You can read up on it [http://www.gnu.org/licenses/gpl-3.0.html here].
+
+==== But there are _tons_ of kernels out there. Why work on Ksunil? ====
+We first started Ksunil as a way to test our skills in OS and kernel development. We wanted to write something simple that even the most novice developer could understand and learn from. It is by no means a replacement for existing kernels and OS's (Linux, for example), but it is a great learning tool!
+
+==== What's this name "Ksunil" all about? ====
+"Ksunil" is a double-reverse name: we reversed the phonetics of Linux (which would yield Skunil), then figured we'd reverse the first letter again, which gave us Ksunil. Clever, huh? ;-)
