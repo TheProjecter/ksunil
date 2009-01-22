@@ -1,3 +1,5 @@
+nasm -f elf src/boot/bootsect.asm -o obj/bootsect.o
+
 # Compile all the files
 gcc -o obj/main.o -c src/kernel/main.c -Wall -Wextra -Werror -I src/include/ -nostdlib -nostartfiles -nodefaultlibs -ffreestanding -fno-stack-protector
 gcc -o obj/port.o -c src/kernel/port.c -Wall -Wextra -Werror -I src/include/ -nostdlib -nostartfiles -nodefaultlibs -ffreestanding -fno-stack-protector
