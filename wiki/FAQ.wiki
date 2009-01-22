@@ -23,3 +23,27 @@ We first started Ksunil as a way to test our skills in OS and kernel development
 
 ==== What's this name "Ksunil" all about? ====
 "Ksunil" is a double-reverse name: we reversed the phonetics of Linux (which would yield Skunil), then figured we'd reverse the first letter again, which gave us Ksunil. Clever, huh? ;-)
+
+== Technical ==
+
+==== In what language is Ksunil developed? ====
+Ksunil is currently developed in C and x86 assembly, but mostly C.
+
+==== How do I build Ksunil? ====
+If you download the source, you will see a shell script called 'make.sh'. Simply run the command "sh make.sh" and everything will be built and linked for you, and the floppy image created. Here is what the make.sh file does:
+{{{
+# Compile all the files
+gcc -o obj/main.o -c src/kernel/main.c -Wall -Wextra -Werror -I src/include/ -nostdlib -nostartfiles -nodefaultlibs -ffreestanding -fno-stack-protector
+gcc -o obj/port.o -c src/kernel/port.c -Wall -Wextra -Werror -I src/include/ -nostdlib -nostartfiles -nodefaultlibs -ffreestanding -fno-stack-protector
+gcc -o obj/cursor.o -c src/kernel/cursor.c -Wall -Wextra -Werror -I src/include/ -nostdlib -nostartfiles -nodefaultlibs -ffreestanding -fno-stack-protector
+gcc -o obj/memory.o -c src/kernel/memory.c -Wall -Wextra -Werror -I src/include/ -nostdlib -nostartfiles -nodefaultlibs -ffreestanding -fno-stack-protector
+gcc -o obj/string.o -c src/kernel/string.c -Wall -Wextra -Werror -I src/include/ -nostdlib -nostartfiles -nodefaultlibs -ffreestanding -fno-stack-protector
+gcc -o obj/screen.o -c src/kernel/screen.c -Wall -Wextra -Werror -I src/include/ -nostdlib -nostartfiles -nodefaultlibs -ffreestanding -fno-stack-protector
+
+# Link all object files into kernel.bin
+ld -T linker.ld -o bin/kernel.bin obj/bootsect.o obj/main.o obj/port.o obj/cursor.o obj/memory.o obj/string.o obj/screen.o
+
+# Create a floppy image
+rm floppy.img
+cat stage1 stage2 pad bin/kernel.bin > floppy.img
+}}}
