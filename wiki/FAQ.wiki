@@ -47,3 +47,10 @@ ld -T linker.ld -o bin/kernel.bin obj/bootsect.o obj/main.o obj/port.o obj/curso
 rm floppy.img
 cat stage1 stage2 pad bin/kernel.bin > floppy.img
 }}}
+
+==== How do I run Ksunil? ====
+We suggest using [http://bellard.org/qemu/ QEMU] for running the floppy image, though [http://bochs.sourceforge.net/ Bochs] should work, too. To run in QEMU, simply type:
+{{{
+qemu -fda floppy.img
+}}}
+QEMU might complain about KQemu not being present, or not having enough memory. In that case, run it with -no-kqemu. Simple, no? :D
