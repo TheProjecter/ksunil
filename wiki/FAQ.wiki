@@ -32,6 +32,8 @@ Ksunil is currently developed in C and x86 assembly, but mostly C.
 ==== How do I build Ksunil? ====
 If you download the source, you will see a shell script called 'make.sh'. Simply run the command "sh make.sh" and everything will be built and linked for you, and the floppy image created. Here is what the make.sh file does:
 {{{
+nasm -f elf src/boot/bootsect.asm -o obj/bootsect.o
+
 # Compile all the files
 gcc -o obj/main.o -c src/kernel/main.c -Wall -Wextra -Werror -I src/include/ -nostdlib -nostartfiles -nodefaultlibs -ffreestanding -fno-stack-protector
 gcc -o obj/port.o -c src/kernel/port.c -Wall -Wextra -Werror -I src/include/ -nostdlib -nostartfiles -nodefaultlibs -ffreestanding -fno-stack-protector
