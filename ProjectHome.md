@@ -1,0 +1,1 @@
+Ksnuil is an open-source OS written in x86 Assembly and C. The idea is for it to be small and fast, yet efficient for simple things. It is also a very good way to learn about OS development.
